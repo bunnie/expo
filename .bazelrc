@@ -6,6 +6,10 @@
 common --enable_bzlmod
 common --enable_workspace=no
 
+# create symlinks for bazel-out in the current directory
+build --symlink_prefix=bazel-
+build --experimental_convenience_symlinks=ignore
+
 # https://docs.opentitan.org/doc/rm/c_cpp_coding_style/#cxx-version specifies
 build --action_env=BAZEL_CXXOPTS="-std=gnu++14"
 build --cxxopt='-std=gnu++14'
